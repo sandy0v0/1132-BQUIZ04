@@ -3,7 +3,7 @@
 $row=$Admin->find($_GET['id']);
 $userPr=unserialize($row['pr']);
 ?>
-<h2 class="ct">修改管理權限</h2>
+<h2 class="ct">修改管理員權限</h2>
 <form action="./api/save_admin.php" method="post">
 <table class="all">
     <tr>
