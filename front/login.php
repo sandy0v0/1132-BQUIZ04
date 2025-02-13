@@ -38,7 +38,7 @@
                 },function(res){
                     //console.log(res)
                     if(parseInt(res)){
-                       location.href='index.php';
+                       location.href='back.php';
                     }else{
                         alert("帳號或密碼錯誤")
                     }

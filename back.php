@@ -38,6 +38,7 @@ $pr=unserialize($user['pr']);
                 ?>
                 <a href="./api/logout.php?table=Admin" style="color:#f00;">登出</a>
             </div>
+        </div>
         <div id="right">
 		<?php 
         $do=$_GET['do']??'admin';
