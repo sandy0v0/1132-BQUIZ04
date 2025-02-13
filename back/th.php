@@ -21,11 +21,10 @@
         <td class="pp"><button>修改</button><button>刪除</button></td>
     </tr>
     <tr class='ct'>
-        <td class="pp">男用皮件尸</td>
+        <td class="pp">男用皮件</td>
         <td class="pp"><button>修改</button><button>刪除</button></td>
     </tr>
 </table>
-
 
 
 
