@@ -29,13 +29,13 @@
         $mids=$Type->all(['big_id'=>$big['id']]);
         foreach($mids as $mid):
     ?>
-            <tr class='ct'>
-                <td class="pp"><?=$mid['name'];?></td>
-                <td class="pp">
-                <button onclick="editType(<?=$mid['id'];?>,this)">修改</button>
-                <button onclick="del('Type',<?=$mid['id'];?>)">刪除</button>
-                </td>
-            </tr>
+    <tr class='ct'>
+        <td class="pp"><?=$mid['name'];?></td>
+        <td class="pp">
+            <button onclick="editType(<?=$mid['id'];?>,this)">修改</button>
+            <button onclick="del('Type',<?=$mid['id'];?>)">刪除</button>
+        </td>
+    </tr>
     <?php
         endforeach;
        endif;
@@ -46,43 +46,49 @@
 <script>
 getBigs();
 
-function addType(type){
-    let name,big_id;
-    switch(type){
+function addType(type) {
+    let name, big_id;
+    switch (type) {
         case 'big':
-            name=$("#big").val();
-            big_id=0;
+            name = $("#big").val();
+            big_id = 0;
             break;
         case 'mid':
-            name=$("#mid").val();
-            big_id=$("#selbig").val();
+            name = $("#mid").val();
+            big_id = $("#selbig").val();
             break;
     }
 
-    $.post("./api/save_types.php",{name,big_id},function(){
-                /* if(type=='big'){
-                    getBigs();
-                    $("#big").val("");
-                }else{
-                    $("#mid").val("");
-                } */
-                location.reload();
-            })
+    $.post("./api/save_types.php", {
+        name,
+        big_id
+    }, function() {
+        /* if(type=='big'){
+            getBigs();
+            $("#big").val("");
+        }else{
+            $("#mid").val("");
+        } */
+        location.reload();
+    })
 }
 
-function getBigs(){
-    $.get("./api/get_bigs.php",function(bigs){
+function getBigs() {
+    $.get("./api/get_bigs.php", function(bigs) {
         $("#selbig").html(bigs)
     })
 }
 
-function editType(id,dom){
-    let typeName=$(dom).parent().prev().text();
-    let name=prompt("請輸入你要修改的分類名稱",typeName)
-    
-    $.post("./api/save_types.php",{id,name},function(res){
-      //  console.log(res);
-         //location.reload();
+function editType(id, dom) {
+    let typeName = $(dom).parent().prev().text();
+    let name = prompt("請輸入你要修改的分類名稱", typeName)
+
+    $.post("./api/save_types.php", {
+        id,
+        name
+    }, function(res) {
+        //  console.log(res);
+        //location.reload();
         $(dom).parent().prev().text(name);
     })
 }
@@ -92,7 +98,7 @@ function editType(id,dom){
 
 <h2 class="ct">商品管理</h2>
 <div class="ct">
-    <button>新增商品</button>
+    <button onclick="location.href='?do=add_item'">新增商品</button>
 </div>
 
 <table class="all">
