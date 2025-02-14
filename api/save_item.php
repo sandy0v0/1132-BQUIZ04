@@ -11,3 +11,5 @@ if(!isset($_POST['id'])){
 }
 
 $Item->save($_POST);
+
+to("../back.php?do=add_item");
