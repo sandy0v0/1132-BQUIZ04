@@ -47,3 +47,33 @@
     <input type="reset" value="重置">
     <input type="button" value="返回">
 </div>
+
+<script>
+// 當我大分類的項目改變的時候，請他跟著改變中分類的項目
+getTypes('big');
+
+$("#big").on("change",function(){
+    getTypes('mid');
+})
+
+
+function getTypes(type){
+    let big_id=0;
+    if(type=='mid'){
+        big_id=$("#big").val();
+    }
+
+    $.get("./api/get_types.php",{type,big_id},function(types){
+        switch(type){
+            case 'big':
+                $("#big").html(types)
+                getTypes('mid');
+                break;
+            case 'mid':
+                $("#mid").html(types)
+                break;
+        }
+      
+    })
+}
+</script>
