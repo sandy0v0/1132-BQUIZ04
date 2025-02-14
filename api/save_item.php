@@ -8,8 +8,9 @@ if(isset($_FILES['img']['tmp_name'])){
 // 如果他沒有id，代表是新增的，那就給他一個sh
 if(!isset($_POST['id'])){
     $_POST['sh']=1;
+    $_POST['no']=rand(100000,999999);
 }
 
 $Item->save($_POST);
 
-to("../back.php?do=add_item");
+to("../back.php?do=th");

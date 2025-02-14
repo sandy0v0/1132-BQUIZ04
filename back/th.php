@@ -115,6 +115,7 @@ function editType(id,dom){
         <td class="ct">
             <button onclick="location.href='?do=edit_item&id=<?=$row['id'];?>'">修改</button>
             <button onclick="del('Item',<?=$row['id'];?>)">刪除</button>
+            <br>
             <button onclick="sh(<?=$row['id'];?>,1,this)">上架</button>
             <button onclick="sh(<?=$row['id'];?>,2,this)">下架</button>
 
