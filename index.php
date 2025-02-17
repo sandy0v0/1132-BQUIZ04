@@ -57,13 +57,14 @@
             <div style="min-height:400px;">
                 <!-- [傳址]讓滑鼠點下去之後，讓右邊的流行皮件大標題點下去之後，可以抓到資料傳給左邊的男用皮件 -->
                 <!-- 以下先做當滑鼠移到右邊的大標題之後，會跳出中標題，點擊時會顯示id這邊要用GET -->
-                <a href="?type=0">全部商品</a>
+                <a href="?type=0">全部商品(<?=$Item->count(['sh'=>1]);?>)</a>
             <?php
             $bigs=$Type->all(['big_id'=>0]);
             foreach($bigs as $big){
                 echo "<div class='ww'>";
                 echo "<a href='?type={$big['id']}'>";
                 echo $big['name'];
+                echo "({$Item->count(['big'=>$big['id'],'sh'=>1])})";
                 echo "</a>";
 
                 if($Type->count(['big_id'=>$big['id']])>0){
@@ -72,6 +73,7 @@
                     foreach($mids as $mid){
                         echo "<a href='?type={$mid['id']}' style='background-color: #efde85;'>" ;
                         echo $mid['name'];
+                        echo "({$Item->count(['mid'=>$mid['id'],'sh'=>1])})";
                         echo "</a>";
                     }    
                     echo "</div>";               

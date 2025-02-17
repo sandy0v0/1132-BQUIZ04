@@ -74,7 +74,7 @@ function count(...$arg){
     if(!empty($arg[0]) && is_array($arg[0])){
         $tmp=$this->arrayToSQL($arg[0]);
         $sql .=" where ".join(" && ",$tmp);
-    }else if(is_string($arg[0])){
+    }else if(isset($arg[0]) && is_string($arg[0])){
         $sql .=$arg[0];
     }
 
