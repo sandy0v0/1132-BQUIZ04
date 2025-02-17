@@ -31,7 +31,7 @@
         let ans=$("#ans").val();
     
         $.get("./api/chk_ans.php",{ans},function(res){
-            //console.log(ans,res)
+            // console.log(ans,res)
             if(parseInt(res)){
                 $.get("api/chk_pw.php",{
                     acc:$("#acc").val(),
