@@ -41,11 +41,11 @@ if($typeId==0){
 <!-- 如果有$big有值代表他是中分類，如果是0代表是大分類，其餘就是全部商品 -->
 <?php
     if($typeId==0){
-        $rows=$Item->all();
+        $rows=$Item->all(['sh'=>1]);
     }else if($type['big_id']==0){
-        $rows=$Item->all(['big'=>$typeId]);
+        $rows=$Item->all(['big'=>$typeId,'sh'=>1]);
     }else{
-        $rows=$Item->all(['mid'=>$typeId]);
+        $rows=$Item->all(['mid'=>$typeId,'sh'=>1]);
     }
     ?>
 <?php
