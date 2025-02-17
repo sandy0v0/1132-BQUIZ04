@@ -54,7 +54,7 @@ foreach($rows as $row):
 <div class='item'>
     <div class='pp ct'>
         <a href="?do=detail&id=<?=$row['id'];?>">
-            <img src="./img/<?=$row['img'];?>" style="width:200px;height:160px">
+            <img src="./img/<?=$row['img'];?>" style="width:200px;height:150px">
         </a>
     </div>
     <div>
@@ -66,7 +66,7 @@ foreach($rows as $row):
             </a>
         </div>
         <div class='pp'>規格:<?=$row['spec'];?></div>
-        <div class='pp'>簡介:<?=mb_substr($row['intro'],0,20);?>...</div>
+        <div class='pp'>簡介:<?=mb_substr($row['intro'],0,30);?>...</div>
     </div>
 </div>
 <?php

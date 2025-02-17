@@ -14,16 +14,16 @@ $row=$Item->find($_GET['id']);
         border:1px solid white;
     }
     .item>div:nth-child(1){
-        width:40%;
+        width:60%;
     }
     .item>div:nth-child(2){
-        width:60%;
+        width:40%;
     }
 </style>
 <div class='item'>
     <div class='pp ct'>
         <a href="?do=detail&id=<?=$row['id'];?>">
-            <img src="./img/<?=$row['img'];?>" style="width:250px;height:200px">
+            <img src="./img/<?=$row['img'];?>" style="width:350px;height:270px">
         </a>
     </div>
     <div>
@@ -34,7 +34,8 @@ $row=$Item->find($_GET['id']);
         <div class='pp'>庫存量:<?=$row['stock'];?></div>
     </div>
 </div>
-<div class="tt ct">
+<div class="tt ct" style="width: 85%;justify-self: center;">
+    購買數量:
     <input type="number" name="qt" id="qt" value='1'>
     <img src="./icon/0402.jpg" alt="" onclick="buy()">
 </div>
