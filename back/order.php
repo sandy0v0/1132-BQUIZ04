@@ -21,7 +21,7 @@
         <td><?=$row['name'];?></td>
         <td><?=date("Y/m/d",strtotime($row['order_time']));?></td>
         <td>
-            <button onclick="del('order',<?=$rows['id'];?>)">刪除</button>    
+            <button onclick="del('Order',<?=$row['id'];?>)">刪除</button>    
         </td>
     </tr>
     <?php
