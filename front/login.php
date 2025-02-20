@@ -40,7 +40,7 @@
                 },function(res){
                     //console.log(res)
                     if(parseInt(res)){
-                       location.href='back.php';
+                       location.href='index.php';
                     }else{
                         alert("帳號或密碼錯誤")
                     }
