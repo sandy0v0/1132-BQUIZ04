@@ -22,6 +22,13 @@ if(!isset($_SESSION['Mem'])){
     <?=$_SESSION['Mem'];?>的購物車
 </h2>
 
+<?php 
+/* if(isset($_GET['err']) && $_GET['err']==1){
+    echo "<h2 class='ct' style='font-size:26px;color:red'>購物車尚無商品，不需結帳</h2>";
+}
+ */
+?>
+
 <!-- table.all>(tr.tt.ct>td*7)+(tr.pp>td.ct*7) -->
 
 <table class="all">
